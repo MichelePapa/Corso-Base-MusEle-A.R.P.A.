@@ -1,0 +1,182 @@
+\documentclass[15pt,a4paper]{report} 
+
+%impostazioni di pagina
+\usepackage{fancyhdr}
+
+%FONT
+\usepackage{mathpazo} % math & rm
+\linespread{.75}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\normalfont
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+
+% resize title
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\huge\bfseries}%\color{black}}
+  {\chaptertitlename\ \thechapter}{5pt}{\large}
+\titleformat{\section}
+  {\normalfont\sffamily\normalsize\bfseries}%\color{grey}}
+  {\thesection}{1em}{}
+  
+ %colore
+
+\usepackage{xcolor}
+  \usepackage {textcomp}
+
+%titolatura
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.3em}%
+}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,%
+heightrounded,bindingoffset=5mm}
+\title{\textbf{MUSICA ELETTRONICA}}
+\subtitle{\textsc{Lezione I}}
+\date{3 Marzo 2018}
+\pagenumbering{arabic}
+
+%apertura documento
+\begin{document}
+\maketitle
+
+\chapter*{Lezione III - 17 Marzo 2018}
+
+Terza lezione del corso di BASE di Mus.Ele della scuola di Musica ARPA
+
+In questa lezione abbiamo trattato:
+\begin{enumerate}
+\item{Il campionamento}
+\item{Trasformazione di un suono}
+\item{Composizione: le cadenze}
+\item{Necessità di un elettronica}
+\item{Sviluppo della creatività}
+\end{enumerate}
+
+
+
+
+\chapter*{Sabato 3 Marzo \\ Lezione I}
+
+\textbf{I PARAMETRI DEL SUONO} \\
+\\
+Il suono è la propagazione di un'onda, più o meno complessa, all'interno di un conduttore. Ogni suono si propaga, quindi, in un materiale composto di particelle, come aria, acqua, metalli. All'interno dell'aria il suono si propaga a circa 340 metri al secondo ed è fisicamente: \textit{lo spostamento delle molecole d'aria, da un punto A} - SORGENTE \textit{ad un punto B} - RICEVENTE. \textit{Il segnale si muove in un} CONDUTTORE \textit{attraverso il quale passa il} MESSAGGIO. \\ \\
+Il suono è composto da 3 parametri. Questi sono parametri fisici indirettamente legati a parametri percettivi, che cambiano per ogni essere vivente.\\
+\begin{enumerate}
+\item{\textbf{Frequenza-Altezza del suono.} \\ La frequenza è un parametro fisico ed è rappresentato dal numero di volte che un segnale sinusoidale compie un intero giro sull'asse orizzontale del tempo nell'arco di un secondo. A livello percettivo, a seconda del numero di oscillazioni al secondo (periodo) riusciamo a percepire l'altezza della nota suonata. \\  \\
+\centerline{\textit{Ad esempio}} \\ \\
+\centerline{80 oscillazioni = 80hz = nota bassa} \\ \\
+\centerline{\textit{VICEVERSA}} \\ \\
+\centerline{3000 oscillazioni = 3000hz = nota alta} \\ \\
+\\
+Per quello la frase: \textit{"accordiamo con il LA a 44hz"} sta a significare che il numero di oscillazioni al secondo che compongono quella determinata nota "LA" in quella determinata posizione sulla tastiera del pianoforte, o della chitarra, saranno 440 al secondo. In più, i \textit{diapason} nella vibrazione a seguito della concussione, provocano una vibrazione uguale a 440hz. (Figura 1.)} \\
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\includegraphics[width=.8\textwidth]{0000231_diapason-in-la.jpg}
+\caption{\textit{Diapason}}
+\end{minipage}
+\end{figure} 
+\\
+\item{\textbf{Intensità o volume di un suono.}} \\
+Ogni suono che percepiamo è legato ad un'\textit{intensità}, che rappresenta il parametro fisico con il quale si misura la quantità in \textit{deciBel} (unità di misura) con le quali un'onda si propaga in una determinata superficie. \\
+Tale grandezza è legata al volume: qualità che sta a rappresentare, in psicoacustica (quindi è un parametro \textbf{percettivo}), la distinzione di un suono debole da uno forte.
+\item{\textbf{Inviluppo e Timbro}}\\
+L'ultimo parametro percettivo è il timbro: il timbro è quella qualità che ogni strumento possiede e rende possibile il suo riconoscimento e la sua classificazione. E' un parametro percettivo che ne identifica la sua unicità e specificità acustica ed etnomusicologica. Tale parametro si può identificare indirettamente con tre parametri fisici: 
+\begin{enumerate}
+\item{L'inviluppo spettrale. \\
+E' un parametro fisico che indica l'andamento, a livello spettrale, di un suono più o meno complesso. All'interno dei primi 5-15 millisecondi troviamo le caratteristiche che determinano la riconoscibilità di un determinato strumento musicale.}
+\item{Il numero di armoniche. \\
+Il numero di armoniche all'interno di uno spettro, che possono essere armoniche pari o dispari, nel identificano una qualità che rende possibile riconoscere la differenza tra una corda risonante e un corpo di ottone vibrante.} 
+\item{L'ADSR. \\
+Acronimo di \textit{Attack-Decay-Sustain-Release}. Rappresenta a livello grafico, il comportamento nel tempo dell'ampiezza di un determinato suono.\\}
+\end{enumerate}
+\end{enumerate}
+L'unione di queste tre caratteristiche rende possibile il riconoscimento del suono di un violoncello, piuttosto che di una chitarra elettrica e quindi, la riconoscibilità timbrica. \\  \\
+\\
+\textbf{IL CAMPIONAMENTO} \\
+\\
+Il \textbf{campionamento} è un processo digitale che rende possibile la trasformazione di un suono \textit{continuo} (suono analogico) in suono \textit{discreto} (suono digitale). In natura ogni suono-rumore, può essere scomposto fino alla sua più piccola parte e a sua volta può essere scomposto ancora in infinite parti e per questo ogni suono analogico è chiamato suono continuo. A differenza del primo, il suono digitale è chiamato discreto poiché finito e nell'ambito digitale può essere scomposto in piccole parti, anche microscopiche, ma comunque finite. 
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\includegraphics[width=1.5\textwidth]{campionamento.jpg}
+\caption{\textit{Il campionamento}}
+\end{minipage}
+\end{figure} 
+Il campionamento è dunque, una scomposizione in piccolissime parti di un suono analogico nell'ambito digitale, che viene \textit{ripreso} e indicizzato con un \textit{tempo di clock} legato al convertitore A/D (\textit{Analogico/Digitale}). \\ \\
+\textbf{La frequenza di campionamento} è la misura espressa in \textit{Herz} (unità di misura della frequenza) del numero di volte, in un secondo, in cui un suono analogico viene memorizzato in forma digitale. Per frequenza di campionamento, quindi, intendiamo il parametro con il quale si "campiona" un suono. Ogni stringa di codice memorizzata, al secondo, viene chiamata \textit{campione} (notiamo come in figura 2. ogni t, ad es. t1, t2, t3, stanno ad indicare un campione).
+\\ Il convertitore interno alle schede audio, o a parte ci dà la possibilità di campionare ad una determinata frequenza di campionamento. Più è alta, più il suono ha una qualità maggiore. Inoltre in inglese, la quantità di campioni con il quale un suono analogico è campionato, si chiama \textit{sample-rate}. \\
+\\
+Il \textbf{teorema del campionamento di Nyquist-Shannon} è legato al campionamento. Per evitare di perdere le informazioni di un segnale ci si basa  sulla \textit{frequenza di Nyquist} che consiste nella minima frequenza necessaria per campionare un segnale evitando l'aliasing (errore di campionamento). Tale frequenza deve essere pari al doppio della frequenza massima del segnale in entrata. Quindi, se il nostro orecchio percepisce da 20 a 20.5k Hz, allora la frequenza minima di campionamento per evitare perdite di segnale è 44100 Hz/s. La possibilità di campionare a frequenze di campionamento maggiori, aumenta la qualità del segnale convertito, ecco perché il campionamento può andare anche oltre i 44100 Hz/s.  
+\\
+\\
+Il \textbf{bit rate} è il numero di "scalini" con i quali un suono viene campionato. Ossia, le caselle di memoria nelle quali, secondo la velocità della frequenza di campionamento impostata, immettiamo i dati relativi alla ripresa audio. Come nella pellicola cinematografica, noi vediamo delle scene che sembrano essere consecutive, ma in realtà vediamo tanti fotogrammi (dai 25 ai 30ca al secondo) che si susseguono nel tempo. Lo stesso metodo utilizza il convertitore nel campionare il suono e poi nel riprodurlo tramite sequencer o software audio. \\ \\
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\includegraphics[width=1.5\textwidth]{bitrate.jpg}
+\caption{\textit{diverse tipologie di bit-rate}}
+\end{minipage}
+\end{figure} 
+A seconda del numero di caselle, il segnale campionato sarà più o meno preciso. Un alto numero di caselle di memoria, ad esempio 24bit, rendono possibile una maggiore qualità audio, associata ad un alta frequenza di campionamento. \\ \\ \\
+\textbf{TRASFORMAZIONE DI UN SUONO}\\ \\
+Ogni suono può essere semplicemente campionato e quindi, registrato. Il suono campionato se viene modificato nello stesso tempo in cui viene campionato, allora vuol dire che si sta facendo una trasformazione, un'elaborazione del suono in tempo reale. In verità, il tempo reale è basato sull'utilizzo di sistemi che viaggiano parallelamente con il campionamento che si chiamano DSP (digital sound processor). Alcune schede audio ne montano di propri e velocizzano di molto il processamento del segnale audio. In tutti i sequencer e DAW il suono è campionato e processato direttamente all'interno del computer che si sta utilizzando (editing \textit{on-board}) per questo si può avere un minimo di \textit{latenza} dovuta al peso dei processamenti che si stanno facendo e della qualità del campionamento che si sta utilizzando.\\ 
+Abbiamo visto come importanti cambiamenti su un suono sdoppiato e riprodotto in parallelo con un minimo di ritardo (5-100 millisecondi) può portare a cambiamenti di fase e minimi di intonazione, come il chorus o il phaser. Anche se tutto questo lo osserveremo meglio nella lezione riguardante le tipologie di effetti audio. \\
+\\
+\textbf{COMPOSIZIONE: Triadi e Cadenze} \\ \\ 
+Le triadi sono una sequenza \textit{armonica} e \textit{verticale} di tre note. Queste tre note per suonare in modo armonico contemporaneamente, hanno bisogno di un rapporto fra le voci. Per quanto riguarda le triadi consonanti abbiamo: accordi \textbf{maggiori} e accordi textbf{minori}. Per le triadi dissonanti troviamo: Accordi \textbf{diminuiti} e accordi \textbf{aumentati}. \\ \\
+\centerline{ESEMPIO} 
+\centerline{Formazione di un accordo MAGGIORE costruito sulla tonica di una scala maggiore.}
+\\ \\
+\centerline{I grado}
+\centerline{inteso come la nota che da il nome all'accordo, es: Do Maggiore = DO}
+\\
+\centerline{III grado}
+\centerline{ovvero una distanza di una terza maggiore o 4 semitoni}
+\centerline{dalla fondamentale dell'accordo conclude il nome dell'accordo}
+\centerline{terza maggiore = DO MAGGIORE}
+\\
+\\
+\centerline{V grado}
+\centerline{Il quinto grado dista 5 note dalla fondamentale e una terza minore}
+\centerline{dal III grado, oppure 3 semitoni}
+\\
+\\
+\textbf{Le cadenze} \\ \\
+Sono la punteggiatura del discorso musicale. Ogni determinata cadenza rende possibile la chiusura, l'apertura o la continuazione del discorso musicale. \\
+Ogni sistema accordale può essere usato per rende possibili questi passaggi che portano alla formazione delle cadenze. Sicuramente, come detto a lezione, lo spostamento delle voci in vari registri della tastiera, distoglie l'attenzione dall'andamento delle stesse e a volte può risultare cacofonico. Per questo motivo, soprattutto in musica classica avviene l'utilizzo dei \textit{rivolti} (figura 3.) \\
+Rivedremo più attentamente cadenze e rivolti nella prossima lezione. \\
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\includegraphics[width=1.5\textwidth]{rivolti.jpg}
+\caption{\textit{I rivolti}}
+\end{minipage}
+\end{figure} 
+\\ \\ \\
+\textbf{NECESSITA' DI UN ELETTRONICA} \\ \\
+Abbiamo visto e sentito che l'elettronica può dare grande supporto ai nostri pezzi musicali o alle nostre prime idee. Ogni voce può essere modificata, raddoppiata ed elaborata come più ci piace. Il campionamento è alla base sia della conoscenza di una registrazione puntuale, sia di varie tipologie di processamento audio.
+\\ \\ \\
+\textbf{SVILUPPO DELLA CREATIVITA'} \\ \\
+Ogni lezioni, dalla II (ovvero dalla prossima) in poi, vi verranno assegnati degli esercizi. \\
+Questo primo esercizio consiste in:
+\begin{itemize}
+\item{Installare uno o più software audio che si vogliono utilizzare}
+\item{Registrare anche con il proprio smartphone, dei campioni audio, di voce, dalla strada, in una folla, in metro, in campagna}
+\item{montare a proprio gusto sul sequencer i vari file registrati}
+\end{itemize}
+\end{document}
+
+
+
