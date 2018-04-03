@@ -1,9 +1,9 @@
 \documentclass[12pt,a4paper]{report} 
 
-%impostazioni di pagina
+% ----------------------------------- impostazioni di pagina --------------------------------------
 \usepackage{fancyhdr}
 
-%FONT
+% ------------------------------ FONT ----------------------------------------------------------
 \usepackage{mathpazo} % math & rm
 \linespread{1.2}        % Palatino needs more leading (space between lines)
 \usepackage[scaled]{helvet} % ss
@@ -13,7 +13,7 @@
 \usepackage[italian]{babel}
 \usepackage[latin1]{inputenc}
 
-% resize title
+% ------------------------------- resize title -----------------------------------------
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -23,12 +23,12 @@
   {\normalfont\sffamily\normalsize\bfseries}%\color{grey}}
   {\thesection}{1em}{}
   
- %colore
+ % --------------------------- colore --------------------------------
 
 \usepackage{xcolor}
   \usepackage {textcomp}
 
-%titolatura
+% --------------------------- titolatura -----------------------------------------
 
 \usepackage{titling}
 \newcommand{\subtitle}[1]{%
@@ -46,9 +46,16 @@ heightrounded,bindingoffset=5mm}
 \date{10 Marzo 2018}
 \pagenumbering{arabic}
 
-\usepackage{amsmath}
+%----------------------- Altri Pacchetti ------------------------
 
-%apertura documento
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{breakurl}
+
+
+
+% ----------------------- apertura documento --------------------------------------
 \begin{document}
 
 \maketitle
@@ -59,7 +66,9 @@ heightrounded,bindingoffset=5mm}
 
 \clearpage
 
-\chapter{Lezione II - 10 Marzo 2018}
+% ----------------------- INTRODUZIONE --------------------------------------
+
+\chapter*{INTRODUZIONE: Lezione II - 10 Marzo 2018}
 
 In questa seconda lezione abbiamo parlato di:
 \begin{enumerate}
@@ -70,36 +79,51 @@ In questa seconda lezione abbiamo parlato di:
 \item{Sviluppo della creatività}
 \end{enumerate}
 
+% ----------------------- CHAPTER 1 --------------------------------------
+
 \chapter{ABLETON LIVE}
 
 \textbf{ABLETON LIVE} è una DAW\footnote{Appendice A} che permette, nell'interfacciamento con l'utente, di poter incidere e sovra-incidere loop e parti strumentali, sia acustiche che MIDI\footnote{\textit{ibidem}}. Ha al suo interno un sequencer\footnote{\textit{ibidem}} e una sezione per la musica LIVE. 
 
 \section{Interfaccia}
 
-La sua interfaccia grafica è composta da due modalità: una è formata da una channel-strip verticale, la vista \textit{Sessione}, e una è formata da una channel-strip orizzontale, la vista \textit{Arrangiamento} (fig \ref{fig:modalita}).
+La sua interfaccia grafica ha due visualizzazioni differenti: una è in formato channel-strips verticali: Vista \textit{Sessione}. Il formato orizzontale invece ha una channel strip ma orizzontale e prende il nome di vista \textit{Arrangiamento} (fig \ref{fig:modalita}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.8\textwidth]{modalita.jpg}
+\includegraphics[width=.5\textwidth]{modalita.jpg}
 \caption{\textit{Selezione Vista: orizzontale(Arrangiamento), verticale(Sessione)}}
 \label{fig:modalita}
 \end{figure} 
 
-\subsection{La vista Sessione}
+In ogni modalità dobbiamo comunque accertarci che gli input e gli output siano tutti connessi o legati alla scheda audio che stiamo utilizzando. Se non vengono visualizzate le schede audio in uso, bisogna andare su Preferenze/audio e selezionare la nostra scheda audio collegata al computer. In figura \ref{fig:in} vediamo gli input e gli output di canale. Sia per quanto riguarda l'audio che per il midi, vanno assegnate entrate e uscite(\textbf{Audio From}), che sono rispettivamente la prima e la seconda striscia bianca di figura \ref{fig:in}. Il Monitor è un ascolto prioritario del canale in entrata e ha tre tipologie di utilizzo:
+\begin{itemize}
+\item{In: con ascolto prioritario del canale in entrata. Il volume è controllabile dal fader}
+\item{Auto: mette il canale nella modalità in o off senza bisogno di farlo manualmente}
+\item{off, non permette il monitoraggio del segnale in entrata}
+\end{itemize}
 
-La vista sessione è composta da ogni canale, MIDI, audio e di mandata\footnote{Appendice A}, che servono per portare avanti la creazione di scene per il proprio live. In questa modalità possiamo missare direttamente delle tracce che creeremo al momento (\ref{fig:ses}). 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.2\textwidth]{verticale.jpg}
+\includegraphics[width=.6\textwidth]{input.jpg}
+\caption{\textit{Input e output di canale}}
+\label{fig:in}
+\end{figure} 
+
+\subsection{La vista Sessione}
+
+La vista sessione è composta da ogni canale, MIDI, audio e di mandata\footnote{Appendice A}, che servono per portare avanti la creazione di scene per il proprio live. In questa modalità possiamo missare direttamente delle tracce che creeremo al momento (\ref{fig:ses}). \\
+\begin{figure}[htbp]
+\includegraphics[width=1.6\textwidth]{verticale.jpg}
 \caption{\textit{Sessione}}
 \label{fig:ses}
 \end{figure} 
-
-Attivando il cerchio sul canale (fig \ref{fig:man}), attiveremo la modalità registrazione. Poi dovremmo andare nel punto contrassegnato in rosso in figura \ref{fig:ses} e attivare la scena, così da registrare il Loop che vogliamo utilizzare. Una volta registrato, basterà cliccare nuovamente sulla scena: un click per finire la registrazione, due click per farla ripartire. Eseguito questo gesto a tempo, tutto il circuito di loop è chiuso e possiamo rifarlo sulla scena di un altro canale. Se selezionate correttamente, non c'è bisogno che ogni scena si sulla stessa linea per ogni canale, questo perché la selezione non è fatta a monte ma scena per scena. 
+\\
+Attivando il cerchio sul canale (fig \ref{fig:man}), attiveremo la modalità registrazione. Poi andiamo nel punto contrassegnato in rosso in figura \ref{fig:ses} e attiviamo la scena, così da registrare il Loop che vogliamo utilizzare. Una volta registrato, basterà cliccare nuovamente sulla scena: un click per finire la registrazione, due click per farla ripartire. Eseguito questo gesto, a tempo, tutto il circuito di loop è chiuso e possiamo rifarlo sulla scena in un altro canale. Se selezionato correttamente, non c'è bisogno che ogni scena si sulla stessa linea, questo perché la selezione non è fatta \textit{a monte} ma scena per scena. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{mandate.jpg}
+\includegraphics[width=1.2\textwidth]{mandate.jpg}
 \caption{\textit{Particolare. Sessione di lavoro}}
 \label{fig:man}
 \end{figure} 
@@ -107,92 +131,188 @@ Attivando il cerchio sul canale (fig \ref{fig:man}), attiveremo la modalità regi
 
 \subsection{La vista Arrangiamento}
 
-La vista Arrangiamento si utilizza per fare delle registrazioni in \textit{multitraccia} dei propri lavori. 
+La vista Arrangiamento si utilizza per fare delle registrazioni in \textit{multitraccia} dei propri lavori. In primis bisogna selezionare il cerchietto, che per facilitare il lavoro chiameremo Tasto-Rec, una volta selezionati i canali desiderati, avviamo prima il tasto-rec del player (fig. \ref{fig:play}) e poi il play, così da avviare la registrazione, ricordiamo sempre di selezionare i canali così da evitare false partenze.
 
 \section{I primi passi}
 
-Ricordo che in qualsiasi modalità o nell'utilizzo di qualsiasi scena, bisogna utilizzare il tasto play per avviare il tutto:
-\begin{itemize} 
-\item{freccia nera in figura \ref{fig:play} ed eventualmente il cerchietto di REC, per attivare la registrazione, che verrà effettuata esclusivamente nella modalità arrangiamento.}
-\item{Qualunque Loop o modifica di strumenti musicali, verrà applicata in Sessione, ogni registrazione prolungata di più tracce verrà fatta esclusivamente in Arrangiamento.}
-\end{itemize}
-
-\section{Le automazioni}
-
-
-
+Ricordo che in qualsiasi modalità o nell'utilizzo di qualsiasi scena, bisogna utilizzare il tasto play per avviare sia registrazioni che loop.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.8\textwidth]{play.jpg}
 \caption{\textit{Particolare. Player}}
 \label{fig:play}
 \end{figure} 
+\begin{itemize} 
+\item{freccia nera in figura \ref{fig:play} ed eventualmente il cerchietto di REC, per attivare la registrazione, che verrà effettuata esclusivamente nella modalità arrangiamento.}
+\item{Qualunque Loop o modifica di strumenti musicali, verrà applicata in Sessione, ogni registrazione prolungata di più tracce verrà fatta esclusivamente in Arrangiamento.}
+\end{itemize}
 
-\chapter{Composizione: Rivolti e Ritmi} 
 
-Per quanto riguarda la parte compositiva classica, la scrittura notazionale, abbiamo trattato l'armonia, in unione alle questione di legami verticali con le parti melodiche. Vediamo per bene allora, la situazione per quanto riguarda il movimento musicale. Capire cosa sono i rivolti, le tipologie e le quantità di cambiamenti che si possono fare, battuta per battuta.
+% ----------------------- CHAPTER 2 --------------------------------------
 
-Ricordiamo
+\chapter{Composizione: Scale, gradi e Rivolti} 
+
+Per quanto riguarda la parte compositiva classica, la scrittura notazionale, abbiamo trattato l'armonia in unione alle questione di legami di sovrapposizione di note unite a parti melodiche. Cerchiamo di capire cosa sono i rivolti, le loro peculiarità e le quantità di cambiamenti che si possono fare grazie ad essi, battuta per battuta.
+\\
+Ricordiamo che la composizione è fatta di un movimento orizzontale, la melodia, e una sovrapposizione verticale delle note, gli accordi che formano l'armonia.
+
+\section*{Scale e tonalità}
+
+Prima di ripassare la tonalità, è importante avere chiari alcuni concetti.
+
+La \textit{scala musicale} è il rapporto che c'è tra 7 note consecutive che seguono, dalla prima nota all'ultima della successione, il rapporto TTSTTTS (Toni e Semitoni). Le 7 note sono comprese in un intervallo d'ottava, ottava per ottava il rapporto è sempre lo stesso.
+
+Ognuno di questi suoni (detti "gradi") che compongono una qualsiasi scala maggiore o minore, prende il nome in base alla sua funzione:
+\begin{itemize}
+\item{I grado. TONICA, poiché dà il nome alla scala e alla tonalità, e ha la funzione di trasmettere un senso di stabilità nel fraseggio musicale}
+\item{II grado. SOPRATONICA: segue la tonica}
+\item{III grado. MODALE: definisce il \textit{modo} cioè maggiore o minore}
+\item{IV grado. SOTTODOMINANTE: precede la dominante}
+\item{V grado. DOMINANTE: da al fraseggio un senso di instabilità e sospensione, l'esatto opposto della tonica e riveste un ruolo di grande importanza nel fraseggio musicale}
+\item{VI grado. SOPRADOMINANTE: segue la dominante}
+\item{VII grado. SENSIBILE, se dista un semitono dalla tonica; mentre è chiamata SOTTOTONICA, se dista un tono dalla tonica. Le scale maggiori hanno il VII grado che dista un semitono dalla tonica.}
+\end{itemize}
+
+\section*{La tonalità}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.\textwidth]{circolo.png}
+\caption{\textit{Circolo delle quinte}}
+\label{fig:circolo}
+\end{figure} 
+
+Data questa regola, possiamo trovare qualunque scala e suonarle in qualunque ordine quindi qualunque tonalità MAGGIORE. Per trovare le tonalità relative MINORI, invece, si parte dal VI grado di qualunque scala maggiore. Es: se voglio sapere qual'è la scala minore legata alla tonalità di Do MAGGIORE, conterò do, re, mi... fino al La (VI grado della tonalità di DO). La Tonalità di La Minore, quindi, avrà le stesse note della tonalità di Do Maggiore, ma le note partiranno ovviamente dal LA: La, si, do, re, mi, fa, sol. 
+
+N.B. = Tutte le tonalità minori, per avere la sensibile, avranno l'ultimo grado alterato: es. La minore avrà il Sol diesis, per far rimanere un semitono tra VII e I grado, difatti, come visto prima, il Sol in questo caso sarebbe una SOTTOTONICA, se non fosse alterato.
+
+
+La scala minore senza alterazioni si chiama NATURALE, la scala MINORE-ARMONICA, contiene la SENSIBILE.
+
+\section*{\textbf{Circolo delle quinte}}
+Il circolo (o ciclo) delle quinte (figura \ref{fig:circolo}) è uno schema che ci permette di identificare con facilità tutte le tonalità musicali esistenti e di capire esattamente quali alterazioni (diesis e bemolli) ha in chiave ciascuna di esse. Per costruire questo schema, dobbiamo partire dal DO centrale = scala di Do Maggiore, considerato il punto di riferimento perché è l?unico suono comune a tutti gli strumenti musicali.
+
+Le tonalità sono 36, 18 Maggiori, 18 minori.
 
 \section{Rivolti}
 
-I rivolti non sono altro che un cambiamento di "ordine" delle note che compongono un accordo. Nello specifico, se noi abbiamo una triade, ad esempio Sol major, dal basso verso l'alto troviamo: Sol, Si, Re, che sono rispettivamente I, II e III grado dell'accordo in questione. 
+I rivolti non sono altro che un cambiamento di "ordine" delle note che compongono un accordo. Nello specifico, se noi abbiamo una triade, ad esempio Sol major, dal basso verso l'alto troviamo: Sol, Si, Re, che sono rispettivamente I, III e V grado dell'accordo in questione. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.2\textwidth]{rivolti.jpg}
+\caption{\textit{Rivolti}}
+\label{fig:riv}
+\end{figure} 
+Esistono due tipologie di rivolti per le triadi, e tre tipologie di rivolti per gli \textit{accordi di settima}(ora ci occuperemo solo di quelli inerenti alle triadi):
+\begin{itemize}
+\item{Il primo rivolto è composto dalle stesse note, ma sono in ordine differente: III, V e I grado della triade. Ovviamente i rapporti di distanza tra le note cambiano, non avremo più gli stessi semitoni tra I e III grado, per via dello spostamento: es. Si, Re, Sol = Triade di Sol in PrimoRivolto}
+\item{Il secondo rivolto è composto anch'esso dalle stesse note, ma questa volta, la più bassa è il V grado: V, I, III. (Es. Re, Sol, Si = Triade di Sol in SecondoRivolto)}
+\end{itemize}
 
-\section{Cadenze: II parte}
+Perché utilizzare i rivolti? Per una questione di rapporti armonici nello spostamento delle note. Ogni serie di accordi dovrebbe essere più legata possibile, per riuscire a dare un flusso costante al proprio brano, evitando inutili salti che posso far distogliere l'attenzione dalla melodia principale. Sicuramente ogni variante da questa regola di base è bene accetta. Creare non preclude eccezioni, solo buon gusto.
 
-Noi sappiamo che la musica si divide in due tipologie di movimenti: movimento orizzontale, la melodia, e il movimento verticale, l'armonia. L'armonia serve per dar vita alle cadenze, ovvero alla punteggiature musicale.
-
-
-\section{Ritmi}
+% ----------------------- CHAPTER 3 --------------------------------------
 
 \chapter{Utilizzo dell'elaborazione elettronica}
 
+All'interno della catena audio abbiamo un numero imprecisato di Processori. Questi processori servono per modificare dal timbro alla forma del segnale in entrata e sono divisi in tre grandi famiglie:
+\begin{itemize}
+\item{\textbf{Processori di dinami}: sono i compressori o i gate o simili. Processori che modificano la dinamica, per rendere più presente una parte delle registrazioni fatte o per eliminare il rumore di fondo}
+\item{\textbf{Processori di spettro}: sono processori che tramite piccoli ritardi e cambi di fase, provocano un cambiamento nello spettro: ad esempio Chorus o Flanger. Sono in INSERT.}
+\item{\textbf{Processori ad effetto}: che utilizzano linee di ritardo, modifica di fase e pitch per il cambiamento di ambienti ricreati artificialmente, o echi o effetti d'ambiente: delay, reverbero, ecc.}
+\end{itemize}
 Per utilizzare al meglio i contributi elettronici o l'elaborazione in tempo reale, andiamo a spiegare alcuni effetti interessanti e costruttivi per creare delle variazioni o dei canoni.
+
+Prima di procedere, ricordiamo il \textit{DRY-WET}. Il DRY e il WET sono due estremi dello stesso parametro e sono presenti in tutti i processori ad effetto e in alcuni processori di spettro: questo parametro rende possibile \textit{miscelare} il suono da pulito=DRY fino ad un massimo nel quale il suono è del tutto modificato dall'effetto scelto=WET.
 
 \section{Delay}
 
+Delay o \textit{Linea di Ritardo} è un effetto di che serve per dare alla propria composizione un effetto di canone\footnote{tipologia di composizione che vedremo nella prossima lezione} o una ripetizione.
+I parametri che si possono trovare in quasi tutti i delay sono:
+\begin{itemize}
+\item{Ritardo, che può essere legato al bit che stiamo seguendo, del tipo 120BPM. Può essere sincronizzabile o essere legato ai millisecondi}
+
 \section{Reverbero}
+
+Effetto d'ambiente è un processore d'effetto come il delay e rende possibile modificare la "stanza" nella quale stiamo producendo la nostra composizione, ovvero, se vogliamo far suonare la nostra voce all'interno di uno spazio grande, sarà di lunga suggerito un reverbero plate, o un Hall se vogliamo avere un effetto meno reverberante.
 
 \section{Chorus}
 
-Nella modalità Vista-Sessione, c'è la possibilità di utilizzare le mandate come più ci aggrada e ogni effetto può essere inserito in \textit{Insert}: prima di ogni modifica di volume o di equalizzazione. La cosa buona di Live è che ti da la possibilità di utilizzare in catena svariati effetti prima di arrivare al \textit{fader\footnote{Appendice A}}
+Il chorus è un effetto elettronico che può essere utilizzato sia per la voce che per strumenti musicali. Si inserisce in insert ed è composto da un mixer interno che raggruppo, oltre al suono in ingresso (DRY) anche una o più voci supplementari (ecco perché chorus). Le voci supplementari solo ricavate mediante l'utilizzo di linee di ritardo (analogiche del tipo BBD negli apparati più vecchi, oppure digitali con conversione A/D + ritardo digitale + conversione D/A in quelli più recenti). 
 
+
+Il mixer unirà quindi tutte queste voci, che le linee di ritardo sfaseranno di pochissimo, in più si unisce al tutto un LFO\footnote{Appendice A}, in modo da applicare un effetto doppler\footnote{\textit{ibidem}} al suono. Così da alzarne e abbassarne gradatamente il pitch e provocare piccole differenze di fase.
+
+Un esempio di un chorus particolarmente sofisticato si può trovare nei sintetizzatori ARP Omni e ARP Omni II. \\ 
+
+Nella modalità Vista-Sessione, c'è la possibilità di utilizzare le mandate come più ci aggrada e ogni effetto può essere inserito in \textit{Insert}: prima di ogni modifica di volume o di equalizzazione. La cosa buona di Live è che ti da la possibilità di utilizzare in catena svariati effetti prima di arrivare al \textit{fader\footnote{\textit{ibidem}}}
+
+% ----------------------- CHAPTER 4 --------------------------------------
 
 \chapter{Sviluppo della creatività}
-Questo secondo esercizio consiste in:
+In questo secondo esercizio cercheremo di avviare un discorso sia compositivo che di produzione legata ad una propria idea musicale.
+
+\section{Specifiche}
+
 \begin{itemize}
-\item{Cercare un proprio strumento digitale sul quale improvvisare}
-\item{Fare una serie di accordi}
-\item{Montare una linea vocale nella modalità Vista-Arrangiamento}
+\item{Cercare un proprio strumento digitale sul quale improvvisare. \\
+utilizzare un qualunque strumento e cercare di improvvisare una melodia. Lo strumento deve in qualche modo rispecchiare un vostro strumento ideale. Ricordate che la cosa importante è l'inviluppo.}
+\item{Fare una serie di accordi. \\
+Andare a lavorare sulla parte dell'armonia. Fare una serie di accordi secondo le regole viste nelle lezioni precedenti.}
+\item{Montare una linea vocale nella modalità Vista-Arrangiamento. Eventuali Loop}
 \end{itemize}
 
-\chapter{Appendice A}
+% ----------------------- APPENDICE --------------------------------------
 
-In questa appendice faremo luce su qualche acronimo o sostantivo tecnico presente in Lezione II. 
+\chapter*{Appendice A}
+\addcontentsline{toc}{chapter}{Appendice A}
 
-\section{Sequencer}
+In questa appendice faremo luce su qualche acronimo o sostantivo tecnico presente in Lezione II. Per chi volesse continuare lo studio di Ableton Live: 
+\\
+\url{http://downloads.ableton.com/manuals/81/ableton_live_intro_manual_it.pdf}
+\\
+
+\section*{Sequencer}
 
 Da \textit{Wikipedia}
-\\
 
 Il \textit{sequenziatore} (o, in inglese, "sequencer") è un dispositivo di tipo sia fisico (hardware) sia logico (software) utilizzato nel campo musicale per la creazione e la riproduzione di sequenze di segnali di controllo che consentono di comandare uno strumento elettronico.
 
 Sebbene il sequenziatore venga usato per fini musicali, esso non dev'essere confuso col dispositivo di registrazione audio. A differenza del registratore, dove sono le forme d'onda di un suono a essere memorizzate, nel sequenziatore non viene memorizzato alcun segnale audio a parte quello di controllo. Si può immaginare un sequenziatore come una "mano elettronica" automatica e programmabile che suona strumenti e regola pulsanti e potenziometri di sintetizzatori e processori audio\footnote{https://it.wikipedia.org/wiki/Sequencer}.
 
-\section{DAW}
+\section*{DAW}
 
 Acronimo di \textit{Digital Audio Workstation}, è una piattaforma di lavoro digitale per la produzione e l'editing audio. Tra le più famose abbiamo Live, Cubase, Nuendo e ProTools. La maggior parte delle DAW ha un sequencer e la possibilità di registrare e missare più tracce contemporaneamente. Alcune DAW, come ad esempio Live, ma anche Cubase in rari casi, vengono utilizzate per fare dei veri e propri Live Electronics dal vivo.
 
-\section{Mandata Audio}
+\section*{Mandata Audio}
 
-La \textit{mandata} audio (o AUX-send) è un uscita della nostra catena acustica-digitale. Esistono anche mandate legate al dominio analogico, ma in questo caso a noi servono solo per l'utilizzo sul Live e quindi ci terremo legati al software. La mandata è un uscita dedicata del canale (ovvero un'uscita in più oltre al Master-Out) che viene utilizzata per l'utilizzo di effetti: ogni effetto caricato nel canale della mandata potrà ricevere i contributi da un numero \textit{n} di canali, sia Audio che MIDI. Così da poter utilizzare lo stesso effetto, come Delay o Reverbero, su un canale solo. Quindi il riverbero per 2 o più canali potrà essere uno solo, creando una pasta di suono che renderà più amalgamato il tutto (provare per credere). L'effetto da utilizzare verrà caricato direttamente in insert alla mandata in questione. Due cose, per finire:
+La \textit{mandata} audio (o AUX - send) è un uscita della nostra catena acustica-digitale. Esistono anche mandate legate al dominio analogico, ma in questo caso a noi servono solo per l'utilizzo sul Live e quindi ci terremo legati al software. La mandata è un uscita dedicata del canale (ovvero un'uscita in più oltre al Master-Out) che viene utilizzata per l'utilizzo di effetti: ogni effetto caricato nel canale della mandata potrà ricevere i contributi da un numero \textit{n} di canali, sia Audio che MIDI. Così da poter utilizzare lo stesso effetto, come Delay o Reverbero, su un canale solo. Quindi il riverbero per 2 o più canali potrà essere uno solo, creando una pasta di suono che renderà più amalgamato il tutto (provare per credere). L'effetto da utilizzare verrà caricato direttamente in insert alla mandata in questione.  Per concludere:
 \begin{itemize}
-\item{Ogni mandata è slegata dal fader del canale se è in modalità Pre-Fader anche se il fader è abbassato, alla mandata arriverà lo stesso un segnale audio. Se è in modalità Post-Fader, allora ad ogni cambiamento di ampiezza in uscita, ovvero di movimento del fader, ci sarà un cambiamento nel segnale in uscita delle varie aux in questione}
+\item{Ogni mandata è slegata dal fader del canale se è in modalità Pre-Fader anche se il fader è abbassato, alla mandata arriverà lo stesso un segnale audio.}
+\item{Se è in modalità Post-Fader, allora ad ogni cambiamento di ampiezza in uscita, ovvero di movimento del fader, ci sarà un cambiamento nel segnale in uscita delle varie aux in questione.}
+\item{Tutto questo avviene, perché il segnale audio che entra all'interno del canale ha comunque subito un guadagno analogico ed è già stato convertito dal convertitore A/D.}
 \end{itemize}
 
-\subsection{Fader}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.5\textwidth]{faders.png}
+\caption{\textit{Tipologia di fader digitale}}
+\label{fig:fader}
+\end{figure} 
 
-Il fader, se non ne abbiamo ancora familiarità è un controllo in voltaggio del guadagno in entrata, se lo consideriamo nel dominio analogico. Se lo consideriamo nel dominio digitale è solo un controllo assegnabile ad un \textit{controller MIDI}. Il controller MIDI, che va da 0 a 127, è in scala 0:127= -\infty : +6db
+\subsection*{Fader}
+
+Il fader, se non ne abbiamo ancora familiarità è un controllo in voltaggio del guadagno in entrata, se lo consideriamo nel dominio analogico. Se lo consideriamo nel dominio digitale è solo un controllo assegnabile ad un \textit{controller MIDI}. Il controller MIDI, che va da 0 a 127, è in scala 0 : 127= -\infty : +6db
+
+\section*{LFO - Low Frequency oscillator}
+
+Oscillatore a bassa frequenza che rende possibile a livello percettivo una modulazione d'ampiezza del suono andiamo ad elaborare con un LFO. L'oscillatore a bassa frequenza può essere utilizzato per far \textit{vibrare} le voci lineari e dare un senso minimo di movimento anche frequenziale.
+
+\section*{Effetto Doppler}
+
+Nello spostamento nello spazio di una sorgente sonora, ad esempio da sinistra a destra, di fronte al nostro panorama acustico-percettivo, il suono subisce una \textit{deformazione}. Il suono spostandosi fisicamente da sinistra a destra, o da davanti al fronte alle spalle, in un determinato tempo, subisce una deformazione frequenziale: noi percepiremo un alzamento e poi un abbassamento frequenziale.
+
+\url{https://it.wikipedia.org/wiki/Effetto_Doppler}
 
 \end{document}
 
